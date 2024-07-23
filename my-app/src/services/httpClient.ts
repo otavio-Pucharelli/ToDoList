@@ -1,4 +1,4 @@
-import { Axios, AxiosInstance } from "axios";
+import { AxiosInstance } from "axios";
 import { getAxios } from "./axios";
 
 
