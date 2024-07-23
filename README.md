@@ -13,9 +13,9 @@ Projeto de lista de tarefas utilizando:
 ![Lista de tarefas](image.png)
 
 -----------------------------------------------------------
-# Instalação:
+ ##Instalação
 
-## - Certifique-se de que o Node esteja instalado em sua máquina.
+**Certifique-se de que o Node esteja instalado em sua máquina.**
 - Clone o projeto pára um repositório local.
 - Abra dois terminais, um para cada pasta (server e my-app).
 - Nos dois terminais, utilize o comando **npm -i**, para instalar as dependências.
@@ -24,5 +24,5 @@ Projeto de lista de tarefas utilizando:
 O servidor rodará na porta 5000 e o client no endereço localhost:3000.
 
 
-### Autor:
+ ###Autor
 - [Otàvio Guilherme Moreira Pucharelli](https://github.com/otavio-Pucharelli) - Desenvolvedor
