@@ -72,7 +72,7 @@ function App() {
   const handleEdit = async(e : any) => {
     e.preventDefault();
 
-    let id = e.target.parentElement.parentElement.children[0].children[0].value;
+    let id = e.target.parentElement.parentElement.children[0].value;
     let stringhId = String(id);
     let check = e.target.parentElement.parentElement.children[1].children[0].checked;
     let url = "/tasks/"+stringhId;  
@@ -99,14 +99,14 @@ function App() {
         confirmButtonText: 'Ok'
       });
     })
-    .finally(() => getTasks());   
+    .finally(() => window.location.reload());   
   }
 
   //* Delete a task
   const handleDelete = async(e : any) => {
     e.preventDefault();
 
-    let id = e.target.parentElement.parentElement.children[0].children[0].value;
+    let id = e.target.parentElement.parentElement.children[0].value;
     let stringhId = String(id);
 
     await Swal.fire({
@@ -141,7 +141,6 @@ function App() {
         )
       }
     });
-
   }
 
 //*-------------------------------------------------------------------------------------------------------------------------*//
@@ -153,7 +152,6 @@ function App() {
             <table className='table table-striped'>
               <thead>
                 <tr>
-                  <th className='id'>ID</th>
                   <th className='checkBox'>Concluido</th>
                   <th>Tarefa</th>
                   <th>Ações</th>
@@ -161,9 +159,9 @@ function App() {
               </thead>
               <tbody>
                 <tr>
-                  <td>
-                    <input type="text" value={0} disabled className='form-control' placeholder='id'/>
-                  </td>
+
+                  <input type="hidden" value={0} disabled className='form-control' placeholder='id'/>
+
                   <td>
                     <input type="hidden" disabled/>
                   </td>
@@ -178,13 +176,11 @@ function App() {
                   {typeof backendData === 'undefined' ? 'Loading...' : (
                     backendData.map((task: ITask) => (
                         <tr key={task.id}>
-                          <td className='id'>
-                            <input type="text" disabled className='form-control' id='id' value={task.id}/>
-                          </td>
+                          <input type="hidden" disabled className='form-control' id='id' value={task.id}/>
                           <td className='checkBox'>
                             <input type="checkbox" className='form-check-input' defaultChecked={task.check}/>
                           </td>
-                          <td>
+                          <td className="check-td">
                             <input onChange={(e) => setEditTask(e.target.value)} type="text" className='form-control' defaultValue={task.name}/>
                           </td>
                           <td>

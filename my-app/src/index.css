@@ -13,9 +13,6 @@ button{
 
 }
 
-.id {
-  width: 50px;
-}
 
 .checkBox {
   width: 50px;
@@ -47,7 +44,6 @@ button{
   width: 80%;
 
 }
-
 
 table {
   width: 100%;
